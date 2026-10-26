@@ -1,0 +1,8 @@
+{
+  "name": "Remix Ginwa fleet - Offline Fuel Monitor \u0026 Driver Ranking",
+  "description": "Offline-first delivery truck fuel monitoring system using dashboard fuel gauges to track consumption, analyze efficiency, and rank drivers monthly on fuel savings. The app should also be able to name routes that the driver are  taking from the warehouse and truck selection are at random there is no permanent driver, ",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

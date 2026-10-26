@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="gaugeArc" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="25%" stop-color="#f59e0b" />
+      <stop offset="60%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background with rounded squircle -->
+  <rect width="512" height="512" rx="108" fill="url(#bgGrad)" />
+  <rect x="12" y="12" width="488" height="488" rx="96" fill="none" stroke="#334155" stroke-width="4" stroke-opacity="0.4" />
+
+  <!-- Gauge Arc Outer Rim -->
+  <circle cx="256" cy="270" r="170" fill="#090d16" stroke="#1e293b" stroke-width="6" />
+
+  <!-- Gradient Gauge Dial Arc (from 150deg to 390deg / -30deg) -->
+  <path d="M 120 320 A 150 150 0 1 1 392 320" fill="none" stroke="url(#gaugeArc)" stroke-width="20" stroke-linecap="round" />
+
+  <!-- Tick marks -->
+  <!-- E -->
+  <line x1="120" y1="320" x2="135" y2="305" stroke="#ef4444" stroke-width="4" stroke-linecap="round" />
+  <!-- 1/4 -->
+  <line x1="150" y1="200" x2="165" y2="208" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" />
+  <!-- 1/2 -->
+  <line x1="256" y1="120" x2="256" y2="138" stroke="#10b981" stroke-width="4" stroke-linecap="round" />
+  <!-- 3/4 -->
+  <line x1="362" y1="200" x2="347" y2="208" stroke="#10b981" stroke-width="3" stroke-linecap="round" />
+  <!-- F -->
+  <line x1="392" y1="320" x2="377" y2="305" stroke="#3b82f6" stroke-width="4" stroke-linecap="round" />
+
+  <!-- Labels -->
+  <text x="110" y="360" font-family="system-ui, sans-serif" font-size="28" font-weight="900" fill="#ef4444" text-anchor="middle">E</text>
+  <text x="256" y="172" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#94a3b8" text-anchor="middle">1/2</text>
+  <text x="402" y="360" font-family="system-ui, sans-serif" font-size="28" font-weight="900" fill="#3b82f6" text-anchor="middle">F</text>
+
+  <!-- Gauge Needle pointing to eco zone (around 68%) -->
+  <path d="M 256 270 L 335 185" stroke="#10b981" stroke-width="6" stroke-linecap="round" filter="url(#glow)" />
+  <circle cx="256" cy="270" r="18" fill="#10b981" />
+  <circle cx="256" cy="270" r="8" fill="#0f172a" />
+
+  <!-- Truck Silhouette in Center -->
+  <g transform="translate(186, 310) scale(0.6)" fill="#38bdf8">
+    <path d="M20 8h120v60h-120z M140 32h50l30 36v32h-80z" fill="#0284c7" />
+    <circle cx="50" cy="120" r="22" fill="#e2e8f0" stroke="#0f172a" stroke-width="8" />
+    <circle cx="180" cy="120" r="22" fill="#e2e8f0" stroke="#0f172a" stroke-width="8" />
+    <path d="M10 50 L140 50 L140 110 L10 110 Z" fill="#38bdf8" />
+    <path d="M140 50 L180 50 L210 80 L210 110 L140 110 Z" fill="#0284c7" />
+    <path d="M150 58 L175 58 L195 80 L150 80 Z" fill="#bae6fd" />
+    <!-- Leaf for eco-driving -->
+    <path d="M 60 70 C 60 55, 80 50, 95 60 C 95 75, 75 80, 60 70 Z" fill="#4ade80" />
+    <path d="M 60 70 Q 75 66 95 60" stroke="#166534" stroke-width="2" fill="none" />
+  </g>
+
+  <!-- Eco Leaf Badge in upper corner -->
+  <g transform="translate(380, 60) scale(0.7)">
+    <circle cx="40" cy="40" r="36" fill="#10b981" opacity="0.2" />
+    <circle cx="40" cy="40" r="28" fill="#10b981" />
+    <path d="M 30 52 C 26 36, 44 26, 54 30 C 56 46, 38 56, 30 52 Z" fill="#ffffff" />
+    <path d="M 30 52 Q 40 42 54 30" stroke="#047857" stroke-width="2" fill="none" />
+  </g>
+</svg>
